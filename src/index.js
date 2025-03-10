@@ -2,9 +2,8 @@ import dotenv from "dotenv";
 import ConnectDB from "./db/connect.js";
 import app from "./app.js";
 
-dotenv.config({
-  path: "./.env,"
-});
+dotenv.config();
+
 
 ConnectDB()
   .then(() => {
@@ -16,6 +15,7 @@ ConnectDB()
     });
   })
   .catch((err) => {
+    
     console.log("MONGODB connection Error", err);
   });
 
